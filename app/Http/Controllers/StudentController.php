@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -13,7 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        return $students;
     }
 
     /**
@@ -24,7 +26,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nama' => 'required',
+            'nim' => 'required',
+            'email' => 'required|email',
+            'jurusan' => 'required',
+        ]);
+
+        $student = Student::create($data);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $student
+        ], 201);
     }
 
     /**
@@ -35,7 +49,19 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id);
+
+        if ($student) {
+            return response()->json([
+                'status' => 'success',
+                'data' => $student
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'student not found'
+            ], 404);
+        }
     }
 
     /**
@@ -47,7 +73,20 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+
+        if ($student) {
+            $student->update($request->all());
+            return response()->json([
+                'status' => 'success',
+                'data' => $student
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'student not found'
+            ], 404);
+        }
     }
 
     /**
@@ -58,6 +97,19 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+
+        if ($student) {
+            $student->delete();
+            return response()->json([
+                'status' => 'success',
+                'message' => 'data was deleted'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'data not found'
+            ], 404);
+        }
     }
 }
