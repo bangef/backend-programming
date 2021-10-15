@@ -12,7 +12,16 @@ class StudentController extends Controller
     # membuat method index
     public function index()
     {
-        echo Student::getStudents();
+        # menggunakan model Student untuk select data
+        $students = Student::all();
+
+        $data = [
+            'message' => 'Get all students',
+            'data' => $students
+        ];
+
+        # mengirim data (json) dan kode 200
+        return response()->json($data, 200);
     }
 
     # membuat method store
