@@ -32,3 +32,9 @@ Route::get('/students', [StudentController::class, 'index']);
 
 # Method POST, route /students
 Route::post('/students', [StudentController::class, 'store']);
+
+# Method PUT, route /students
+Route::put('/students/{id}', [StudentController::class, 'update']);
+
+# Method DELETE, route /students
+Route::delete('/students/{id}', [StudentController::class, 'destroy']);
