@@ -1,0 +1,52 @@
+.form__title {
+  text-align: center;
+}
+
+.form__description {
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+  color: #7f8c8d;
+}
+
+form {
+  max-width: 768px;
+  margin: 2rem auto;
+}
+
+.form__group {
+  margin-bottom: 1rem;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form__control {
+  color: #7f8c8d;
+  border-radius: 0.25rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 0.8rem;
+  border: 1px solid #ecf0f1;
+}
+
+.form__control:focus {
+  outline: none;
+  border: 1px solid #a2d2ff;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+form button {
+  width: 100%;
+  background-color: #a2d2ff;
+  border: 1px solid #a2d2ff;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
