@@ -32,11 +32,11 @@ const Form = () => {
     </div>
     <div class="form__group">
       <label for="nim" class="form__label">Nim</label>
-      <input type="text" class="form__control" id="nim" name="nim" required />
+      <input type="number" class="form__control" id="nim" name="nim" required />
     </div>
     <div class="form__group">
       <label for="email" class="form__label">Email</label>
-      <input type="text" class="form__control" id="email" name="email" required />
+      <input type="email" class="form__control" id="email" name="email" required />
     </div>
     <div class="form__group">
       <label for="jurusan" class="form__label">Jurusan</label>
