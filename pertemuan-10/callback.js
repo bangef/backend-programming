@@ -1,10 +1,16 @@
-function formatName(name) {
-  console.log(`Hello, ${name}`);
-}
+/**
+ * Fungsi untuk format nama menjadi uppercase.
+ *
+ * @param {string} name
+ */
+const formatName = (name) => name.toUpperCase();
 
-function setName(name, callback) {
-  const myName = name;
-  callback(myName);
-}
+/**
+ * Fungsi untuk mendapatkan nama.
+ *
+ * @param {string} name
+ * @param {function} callback
+ */
+const getName = (name, callFormatName) => console.log(callFormatName(name));
 
-setName("Aufa", formatName);
+getName("Aufa", formatName);
