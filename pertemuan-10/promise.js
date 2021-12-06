@@ -11,7 +11,7 @@ const download = () => {
    * reject dipanggil jika proses gagal.
    */
   return new Promise((resolve, reject) => {
-    const status = false;
+    const status = true;
 
     setTimeout(() => {
       if (status) {
