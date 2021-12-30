@@ -7,7 +7,7 @@ require("dotenv").config();
 // destructing object process.env
 const { DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE } = process.env;
 
-// update konfigurasi database dari file .env
+// menggunakan konfigurasi database dari file .env
 const db = mysql.createConnection({
   host: DB_HOST || "localhost",
   user: DB_USERNAME || "root",
